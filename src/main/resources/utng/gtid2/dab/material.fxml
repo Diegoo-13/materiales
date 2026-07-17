@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml" 
+            fx:controller="utng.gtid2.dab.controlador.MaterialController" 
+            style="-fx-background-color: #f8f9fa;">
+    
+    <padding>
+        <Insets top="20" right="20" bottom="20" left="20"/>
+    </padding>
+
+    <!-- Título de la sección -->
+    <top>
+        <Label text="Gestión de Materiales" 
+               style="-fx-font-size: 20px; -fx-text-fill: #003366; -fx-font-weight: bold;" 
+               BorderPane.alignment="CENTER">
+            <BorderPane.margin>
+                <Insets bottom="20"/>
+            </BorderPane.margin>
+        </Label>
+    </top>
+
+    <center>
+        <VBox spacing="15">
+            <!-- Tabla de Materiales -->
+            <TableView fx:id="tablaMateriales" VBox.vgrow="ALWAYS" 
+                       style="-fx-border-color: #003366; -fx-border-width: 1;">
+                <columns>
+                    <TableColumn fx:id="colId" text="ID" prefWidth="50" />
+                    <TableColumn fx:id="colNombre" text="Nombre del Material" prefWidth="250" />
+                    <TableColumn fx:id="colStock" text="Stock Mínimo" prefWidth="100" />
+                    <TableColumn fx:id="colCantidad" text="Cantidad" prefWidth="100" />
+                </columns>
+            </TableView>
+
+            <!-- Formulario de entrada y Botones -->
+            <HBox spacing="10" alignment="CENTER_LEFT" style="-fx-background-color: #e9ecef; -fx-padding: 10; -fx-background-radius: 5;">
+                <TextField fx:id="txtNombre" promptText="Nombre" prefWidth="150"/>
+                <TextField fx:id="txtStock" promptText="Stock Mínimo" prefWidth="100"/>
+                <TextField fx:id="txtCantidad" promptText="Cantidad" prefWidth="100"/>
+                
+                <!-- Botones -->
+                <Button text="Guardar" onAction="#handleGuardar" 
+                        style="-fx-background-color: #003366; -fx-text-fill: white; -fx-font-weight: bold;" />
+                <Button text="Editar" onAction="#handleEditar" 
+                        style="-fx-background-color: #ffc107; -fx-text-fill: black; -fx-font-weight: bold;" />
+                <Button text="Eliminar" onAction="#handleEliminar" 
+                        style="-fx-background-color: #dc3545; -fx-text-fill: white; -fx-font-weight: bold;" />
+            </HBox>
+        </VBox>
+    </center>
+</BorderPane>
