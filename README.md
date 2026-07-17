@@ -1,1 +1,3 @@
-***/agregar.png
+## Pantalla Agregar
+
+![Pantalla Agregar](agregar.png)
